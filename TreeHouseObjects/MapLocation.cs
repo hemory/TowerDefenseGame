@@ -1,3 +1,5 @@
+using TreeHouseObjects;
+
 namespace TreehouseDefense
 {
     class MapLocation : Point
@@ -8,6 +10,11 @@ namespace TreehouseDefense
             {
                 throw new OutOfBoundsException(x + "," + y + " is outside the boundaries of the map.");
             }
+        }
+
+        public bool InRangeOf(MapLocation location, int range)
+        {
+            return DistanceTo(location) <= range;
         }
     }
 }
